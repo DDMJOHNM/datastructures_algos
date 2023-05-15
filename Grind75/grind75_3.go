@@ -27,6 +27,10 @@ type ListNode struct {
     
  }
 
+ //add to head
+ //iterate
+ 
+
  func main(){
 	list1 = [1,2,4], list2 = [1,3,4]
 

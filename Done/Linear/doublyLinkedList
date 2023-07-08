@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+)
+
+//connected to two nodes can traverse backward and forward
+
+type Node struct{
+	property int
+	nextNode *Node
+	previousNode *Node	
+
+}
+
+type LinkedList struct{
+	headNode *Node
+}
+
+
+func (linkedList *LinkedList) AddToHead(property int){
+
+}
+
+func (linkedList *LinkedList) IterateList(){
+	
+}
+
+func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{
+
+} 
+
+func main(){
+
+	//add to head method
+	linkedList := LinkedList{}
+	
+	
+}

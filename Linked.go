@@ -8,6 +8,7 @@ type Node struct {
 }
 
 type LinkedList struct {
+	mj
 	head *Node
 	len  int
 }

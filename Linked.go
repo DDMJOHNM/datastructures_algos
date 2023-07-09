@@ -8,7 +8,6 @@ type Node struct {
 }
 
 type LinkedList struct {
-	mj
 	head *Node
 	len  int
 }
@@ -56,10 +55,10 @@ func (ll *LinkedList) GetAt(pos int) *Node {
 }
 
 func (ll *LinkedList) Traverse() {
-	currentNode := ll.head
-	for currentNode != nil {
-		fmt.Println(currentNode.value)
-		currentNode = currentNode.next
+	currentNode1 := ll.head
+	for currentNode1 != nil {
+		fmt.Println(currentNode1.value)
+		currentNode1 = currentNode1.next
 	}
 }
 
@@ -79,12 +78,19 @@ func (ll *LinkedList) AddAfter(nodeProperty int, property int) {
 
 func mergedSortedLists(l1 *LinkedList, l2 *LinkedList) LinkedList {
 
-	//built in function container.list
-
 	mergedList := LinkedList{}
-	//traverse list one
-	//if l1.next is greater than l2.value
-	//addafter
+	currentNode1 := l1.head
+	currentNode2 := l2.head
+
+	mergedList.Insert(currentNode1.value)
+	mergedList.Insert(currentNode2.value)
+
+	for currentNode1 != nil && currentNode2 != nil && currentNode1.next != nil && currentNode2.next != nil {
+		currentNode1 = currentNode1.next
+		currentNode2 = currentNode2.next
+		mergedList.Insert(currentNode1.value)
+		mergedList.Insert(currentNode2.value)
+	}
 
 	return mergedList
 
@@ -92,24 +98,19 @@ func mergedSortedLists(l1 *LinkedList, l2 *LinkedList) LinkedList {
 
 func main() {
 
-	//populate original lisnked lists
-	l1 := LinkedList{}
+	//populate original linked lists
+	l1 := &LinkedList{}
 	l1.Insert(1)
 	l1.Insert(2)
 	l1.Insert(4)
 
-	l2 := LinkedList{}
+	l2 := &LinkedList{}
 	l2.Insert(1)
 	l2.Insert(3)
 	l2.Insert(4)
 
-	//l2.AddAfter(2, 5)
-	// /mergedSortedList := LinkedList{}
-	//iterate
-	//insert between
-	//l := l1.GetAt(1)
-	//fmt.Println(l.next.value)
-	//l2.Traverse()
+	result := mergedSortedLists(l1, l2)
+	result.Traverse()
 
 }
 
